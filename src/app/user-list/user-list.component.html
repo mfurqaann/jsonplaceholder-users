@@ -1,5 +1,15 @@
-<div class="card">
-  <p-table [value]="userList" [tableStyle]="{ 'min-width': '50rem' }">
+<div *ngIf="isLoading" class="card">
+  <p-progressSpinner ariaLabel="loading" />
+</div>
+
+<p-panel *ngIf="!isLoading" header="List All User" class="panel-user-list">
+  <p-table
+    [value]="userList"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [scrollable]="true"
+    scrollHeight="600px"
+    styleClass="p-datatable-striped"
+  >
     <ng-template pTemplate="header">
       <tr>
         <th>Code</th>
@@ -21,4 +31,4 @@
       </tr>
     </ng-template>
   </p-table>
-</div>
+</p-panel>

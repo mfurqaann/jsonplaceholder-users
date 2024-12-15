@@ -1,4 +1,4 @@
-:host ::ng-deep .p-panel-header {
+:host ::ng-deep p-menubar {
     background-color: var(--blue-500);
     border-color: var(--blue-500);
     color: #ffffff;

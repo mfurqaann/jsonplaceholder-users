@@ -12,12 +12,12 @@
         </div>
         <p><strong>Username:</strong> {{ user.username }}</p>
         <p>
-          <strong>Email:</strong>
+          <strong>Email: </strong>
           <a [href]="'mailto:' + user.email">{{ user.email }}</a>
         </p>
-        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p><strong>Phone: </strong> {{ user.phone }}</p>
         <p>
-          <strong>Website:</strong>
+          <strong>Website: </strong>
           <a [href]="'http://' + user.website" target="_blank">{{
             user.website
           }}</a>
@@ -46,8 +46,11 @@
         <p><strong>Company:</strong></p>
         <ul>
           <li><strong>Name:</strong> {{ user.company.name }}</li>
-          <li><strong>Catchphrase:</strong> {{ user.company.catchPhrase }}</li>
-          <li><strong>Business:</strong> {{ user.company.bs }}</li>
+          <li>
+            <strong>Catchphrase:</strong>
+            {{ user.company.catchPhrase | titlecase }}
+          </li>
+          <li><strong>Business:</strong> {{ user.company.bs | titlecase }}</li>
         </ul>
       </p-card>
     </div>

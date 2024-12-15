@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { UserListModule } from './user-list/user-list.module';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -17,6 +19,7 @@ import { TableModule } from 'primeng/table';
     BrowserAnimationsModule,
     ButtonModule,
     TableModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
