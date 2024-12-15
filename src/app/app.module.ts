@@ -9,9 +9,10 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MenubarModule } from 'primeng/menubar';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

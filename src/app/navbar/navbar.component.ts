@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
         command: () => {
           this.router.navigate(['/']);
         },
+        styleClass: 'menubar-class',
       },
     ];
   }

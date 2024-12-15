@@ -22,7 +22,7 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      if (+params['id']) {
+      if (+params['id'] && +params['id'] <= 10) {
         this.id = +params['id'];
       } else {
         this.router.navigateByUrl('not-found');
