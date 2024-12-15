@@ -29,11 +29,10 @@ export class UserDetailsComponent implements OnInit {
       }
     });
 
-    this.fetchUserDetail();
+    this.fetchUserDetail(this.id);
   }
 
-  fetchUserDetail(): void {
-    const id = this.id;
+  fetchUserDetail(id: number): void {
     this.isLoading = true;
     this.userListService.fetchDetailUsers(id).subscribe({
       next: (response) => {
