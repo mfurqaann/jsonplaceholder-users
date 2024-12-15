@@ -12,6 +12,7 @@ import { User } from '../shared/userlist.model';
 export class UserDetailsComponent implements OnInit {
   id: number = 0;
   user: User;
+  isLoading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,13 +34,15 @@ export class UserDetailsComponent implements OnInit {
 
   fetchUserDetail(): void {
     const id = this.id;
-
+    this.isLoading = true;
     this.userListService.fetchDetailUsers(id).subscribe({
       next: (response) => {
         this.user = response;
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('Error fetching user details:', err);
+        this.isLoading = false;
       },
     });
   }

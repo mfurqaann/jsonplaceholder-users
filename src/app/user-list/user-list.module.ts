@@ -14,6 +14,7 @@ import { ChipModule } from 'primeng/chip';
 import { BadgeModule } from 'primeng/badge';
 import { TooltipModule } from 'primeng/tooltip';
 import { DividerModule } from 'primeng/divider';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [UserListComponent, UserDetailsComponent],
@@ -30,6 +31,7 @@ import { DividerModule } from 'primeng/divider';
     BadgeModule,
     TooltipModule,
     DividerModule,
+    ProgressSpinnerModule,
   ],
   providers: [UserlistService],
 })
