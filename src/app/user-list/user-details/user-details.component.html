@@ -1,0 +1,53 @@
+<p-panel *ngIf="user" header="User Details">
+  <div class="p-grid p-dir-col">
+    <div class="p-col">
+      <p-card class="p-shadow-3">
+        <div class="p-d-flex p-ai-center">
+          <p-avatar icon="pi pi-user" size="large" class="p-mr-2"></p-avatar>
+          <h2>{{ user.name }}</h2>
+        </div>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p>
+          <strong>Email:</strong>
+          <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+        </p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p>
+          <strong>Website:</strong>
+          <a [href]="'http://' + user.website" target="_blank">{{
+            user.website
+          }}</a>
+        </p>
+      </p-card>
+    </div>
+
+    <div class="p-col">
+      <p-card class="p-shadow-3">
+        <p><strong>Address:</strong></p>
+        <ul>
+          <li><strong>Street:</strong> {{ user.address.street }}</li>
+          <li><strong>Suite:</strong> {{ user.address.suite }}</li>
+          <li><strong>City:</strong> {{ user.address.city }}</li>
+          <li><strong>Zipcode:</strong> {{ user.address.zipcode }}</li>
+          <li>
+            <strong>Geo Coordinates:</strong> {{ user.address.geo.lat }},
+            {{ user.address.geo.lng }}
+          </li>
+        </ul>
+      </p-card>
+    </div>
+
+    <div class="p-col">
+      <p-card class="p-shadow-3">
+        <p><strong>Company:</strong></p>
+        <ul>
+          <li><strong>Name:</strong> {{ user.company.name }}</li>
+          <li><strong>Catchphrase:</strong> {{ user.company.catchPhrase }}</li>
+          <li><strong>Business:</strong> {{ user.company.bs }}</li>
+        </ul>
+      </p-card>
+    </div>
+  </div>
+</p-panel>
+
+<p-divider></p-divider>
