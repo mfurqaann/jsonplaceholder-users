@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserlistService } from '../shared/userlist.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { User } from '../shared/userlist.model';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-details',
@@ -17,10 +18,12 @@ export class UserDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private userListService: UserlistService,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('User Detail');
     this.route.params.subscribe((params: Params) => {
       if (+params['id'] && +params['id'] <= 10) {
         this.id = +params['id'];

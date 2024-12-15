@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserlistService } from './shared/userlist.service';
 import { User } from './shared/userlist.model';
 import { catchError, of } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-list',
@@ -9,12 +10,16 @@ import { catchError, of } from 'rxjs';
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-  constructor(private userListService: UserlistService) {}
+  constructor(
+    private userListService: UserlistService,
+    private titleService: Title
+  ) {}
 
   userList: Array<User> = [];
   isLoading: boolean = false;
 
   ngOnInit(): void {
+    this.titleService.setTitle('List All User');
     this.getUsers();
   }
 
