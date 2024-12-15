@@ -38,10 +38,11 @@ export class UserDetailsComponent implements OnInit {
     this.userListService.fetchDetailUsers(id).subscribe({
       next: (response) => {
         this.user = response;
-        this.isLoading = false;
       },
       error: (err) => {
         console.error('Error fetching user details:', err);
+      },
+      complete: () => {
         this.isLoading = false;
       },
     });

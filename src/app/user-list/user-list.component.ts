@@ -20,19 +20,17 @@ export class UserListComponent implements OnInit {
 
   getUsers(): void {
     this.isLoading = true;
-    this.userListService
-      .fetchUsers()
-      .pipe(
-        catchError((error) => {
-          console.error('Error fetching users:', error);
-          this.isLoading = false;
-          return of([]);
-        })
-      )
-      .subscribe((response) => {
+    this.userListService.fetchUsers().subscribe({
+      next: (response) => {
         this.userList = response;
-        this.isLoading = false;
         console.log(this.userList);
-      });
+      },
+      error: (error) => {
+        console.error('Error fetching users:', error);
+      },
+      complete: () => {
+        this.isLoading = false;
+      },
+    });
   }
 }
